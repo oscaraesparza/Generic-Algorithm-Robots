@@ -3,4 +3,4 @@ project(cplusplus)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cplusplus main.cpp)
+add_executable(cplusplus main.cpp robot.h robotActions.cpp)
