@@ -6,7 +6,6 @@ int main() {
     int generations;
     const int numberOfRobots = 200;
     bool simutation = true;
-    int map[10][10] = {0};
     cout << "Lets get Evolving" << std::endl;
     cout << "How many generations would you like to simulate? : ";
     cin >> generations;
@@ -20,22 +19,46 @@ int main() {
         {
             robotCollection[i] = Robot();
         }
+        for (int i = 0; i < 1; i++)
+        {
+            robotCollection[i].move();
+        }
+        cout << "\nDisplaying Genese : \n";
+        for(int i = 0; i < 16; i++) {
+            for (int j = 0; j < 5; j++) {
+                // random sensor genes
+                cout << robotCollection[1].genes[i][j] << " ";
+            }
+            cout << endl;
+        }
+        /*
         // for testing power
         for (int i = 0; i < numberOfRobots; i++)
         {
             cout << robotCollection[i].getPower() << " ";
         }
-        for (int k = 0; k < numberOfRobots; k++)
+         */
+        // testing genes
+        /*
+        for (int k = 0; k < 1; k++)
         {
-            cout << "Robot : " << k << endl;
+            cout << "\nRobot : " << k << endl;
+            cout << "Displaying the map : ";
+            for(int i = 0; i < 100; i++) {
+                if((i % 10) == 0)
+                    cout << endl;
+                cout << robotCollection[k].map[i] << " ";
+            }
+
+            cout << "\nDisplaying Genese : \n";
             for(int i = 0; i < 16; i++) {
                 for (int j = 0; j < 5; j++) {
                     // random sensor genes
-                    cout << robotCollection->genes[i][j] << " ";
+                    cout << robotCollection[k].genes[i][j] << " ";
                 }
                 cout << endl;
             }
-        }
+        }*/
         simutation = false;
     }
     return 0;
